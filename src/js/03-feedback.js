@@ -9,7 +9,7 @@ const LOCAL_KEY = 'feedback-form-state';
 form.addEventListener('submit', onFormSubmit);
 form.addEventListener('input', throttle(onFormInput, 500));
 
-const formData = localStorage.getItem(LOCAL_KEY)
+const formDate = localStorage.getItem(LOCAL_KEY)
   ? JSON.parse(localStorage.getItem(LOCAL_KEY))
   : {};
 
@@ -28,7 +28,7 @@ function onFormInput(e) {
   const {
     target: { name, value },
   } = e;
-  formData[name] = value;
+  formDate[name] = value;
 
   localStorage.setItem(LOCAL_KEY, JSON.stringify(formData));
 }
