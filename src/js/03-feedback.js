@@ -4,10 +4,10 @@ const form = document.querySelector('.feedback-form');
 const textarea = document.querySelector('.feedback-form textarea');
 const email = document.querySelector('.feedback-form input');
 
+const LOCAL_KEY = 'feedback-form-state';
+
 form.addEventListener('submit', onFormSubmit);
 form.addEventListener('input', throttle(onFormInput, 500));
-
-const LOCAL_KEY = 'feedback-form-state';
 
 const formData = localStorage.getItem(LOCAL_KEY)
   ? JSON.parse(localStorage.getItem(LOCAL_KEY))
