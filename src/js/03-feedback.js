@@ -24,10 +24,10 @@ function onFormSubmit(evt) {
   evt.currentTarget.reset();
 }
 
-function onFormInput(evt) {
+function onFormInput(e) {
   const {
     target: { name, value },
-  } = evt;
+  } = e;
   formData[name] = value;
 
   localStorage.setItem(LOCAL_KEY, JSON.stringify(formData));
